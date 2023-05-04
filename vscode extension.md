@@ -1,7 +1,5 @@
 ### vscode Extension
 
-
-
 #### install nvm
 
 [mac] 
@@ -20,14 +18,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 => nvm source string already in <$HOME>/.zshrc
 => bash_completion source string already in <$HOME>/.zshrc
 => Close and reopen your terminal to start using nvm or run the following to use it now:
-  
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 ```
-
-
 
 #### Add source command
 
@@ -42,8 +37,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm 
 ```
-
-
 
 #### reopen console and run
 
@@ -69,8 +62,6 @@ v0.1.21
 #node -V
 ```
 
-
-
 #### Install npm
 
 if you're using 'nvm', 'npm' already has been installed.
@@ -81,8 +72,6 @@ which npm
 npm -v
 > 9.5.1
 ```
-
-
 
 #### Install yeoman
 
@@ -95,7 +84,6 @@ yo code
 ```
 
 ```bash
-
      _-----_     ╭──────────────────────────╮
     |       |    │   Welcome to the Visual  │
     |--(o)--|    │   Studio Code Extension  │
@@ -130,8 +118,6 @@ yo code
 ```
 
 - TS로 생성
-  
-  
 
 #### Change the directory
 
@@ -139,14 +125,10 @@ Option 1. Reopen VSCode Window at `quickstart-extension`, which is a new `${work
 
 Option 2. Copy contents in `quickstart-extension` into `.`.
 
-
-
 ```bash
 cp -rf ./quickstart-extension/* ./
 rm -rf ./quickstart-extension
 ```
-
-
 
 #### 예시화면
 
@@ -158,11 +140,33 @@ rm -rf ./quickstart-extension
 
 **title**은 Command Palette에서 노출될 제목
 
-
-
 ##### extension.ts
 
 ![](img/vsextension2.png)
+
+
+
+
+
+
+```python
+vscode.commands.registerCommand(command: str)
+# command : bind the command identifier to title package.json command 
+"""
+package.json
+"contributes": {
+    "commands": [
+      {
+        "command": "check-extension.helloWorld",
+        "title": "Check extension 11"
+      }
+    ]
+  }
+
+"""
+```
+
+vscode.commands.registerCommand(command:str)
 
 
 
@@ -190,5 +194,3 @@ rm -rf ./quickstart-extension
 ![](img/vsextension3.png)
 
 ![](img/vsextension4.png)
-
-
